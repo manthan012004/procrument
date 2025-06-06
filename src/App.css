@@ -10,20 +10,16 @@
   font-family: Arial, sans-serif;
 }
 
-/*<---------------css for the header--------------->*/
+/*<---------------css for the main content beside the sidebar --------------->*/
+.main-content {
+  display: flex;
+  flex-direction: row; /* Sidebar on the left, MainBody on the right */
+  height: 100vh;       /* Optional: ensures both fill the viewport height */
+}
 
 /*<---------------css for the sidebar and main body--------------->*/
 
-.sidebar-and-mainbody {
-  display: flex;
-  flex: 1;
-}
 
 /*<---------------css for the main body--------------->*/
-.main-body {
-  flex: 1;
-  padding: 2rem;
-  background: #fafafa;
-}
 
 

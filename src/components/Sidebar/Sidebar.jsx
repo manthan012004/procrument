@@ -1,14 +1,29 @@
-import './Sidebar.css';
+import React from "react";
+import "./Sidebar.css";
 
-function Sidebar() {
+const templates = [
+  { id: 1, name: "Template 1" },
+  { id: 2, name: "Template 2" },
+  { id: 3, name: "Template 3" },
+];
+
+function Sidebar({ onTemplateSelect, selectedTemplateId }) {
   return (
-    <aside className="sidebar">
-      <ul>
-        <li>Sidebar Item 1</li>
-        <li>Sidebar Item 2</li>
-        <li>Sidebar Item 3</li>
+    <div className="sidebar">
+      <h2>Templates</h2>
+      <ul className="template-list">
+        {templates.map((template) => (
+          <li
+            key={template.id}
+            className={selectedTemplateId === template.id ? "selected" : ""}
+            onClick={() => onTemplateSelect(template)}
+          >
+            {template.name}
+          </li>
+        ))}
       </ul>
-    </aside>
+    </div>
   );
 }
+
 export default Sidebar;

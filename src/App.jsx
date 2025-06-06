@@ -1,18 +1,23 @@
-import React from 'react';
-import './App.css'
-import Header from './components/Header/Header.jsx';
-import Sidebar from './components/Sidebar/Sidebar.jsx';
-import MainBody from './components/MainBody/MainBody.jsx';
+import React, { useState } from "react";
+import Sidebar from "./components/Sidebar/Sidebar";
+import MainBody from "./components/MainBody/MainBody";
+import Header from "./components/Header/Header";
+import "./App.css";
 
 function App() {
+  const [selectedTemplate, setSelectedTemplate] = useState(null);
+
   return (
-    <div className="whole-screen">
-      <div ><Header /></div>
-      <div className="sidebar-and-mainbody">
-        <Sidebar />
-        <main className="main-body">
-          <MainBody />
-        </main>
+    <div className="app-container">
+      <Header />
+      <div >
+        <Sidebar
+          onTemplateSelect={setSelectedTemplate}
+          selectedTemplateId={selectedTemplate?.id}
+        />
+      </div>
+      <div className="main-content">
+        <MainBody selectedTemplate={selectedTemplate} />
       </div>
     </div>
   );

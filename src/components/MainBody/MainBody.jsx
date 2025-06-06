@@ -5,7 +5,7 @@ import CompareVersion from '../pages/CompareVersionPage/CompareVersion.jsx';
 import SubmitForReview from '../pages/SubmitForReviewPage/SubmitForReview.jsx';
 import Comments from '../pages/CommentsPage/Comments.jsx';
 
-function MainBody() {
+function MainBody({ selectedTemplate }) {
   const [selected, setSelected] = useState(null);
 
   let content = null;
@@ -15,7 +15,7 @@ function MainBody() {
   else if (selected === 'comments') content = <Comments />;
 
   return (
-    <div>
+    <div >
       <div className='card-flow-container'>
         <button className='card' onClick={() => setSelected('save')}>Save</button>
         <span className="arrow">→</span>
@@ -26,9 +26,20 @@ function MainBody() {
         <button className='card' onClick={() => setSelected('comments')}>Comments</button>
       </div>
       <div style={{ marginTop: '2rem' }}>
-        {content}
+        {selectedTemplate ? (
+          <div>
+            <h2>{selectedTemplate.name}</h2>
+            {/* Add your editing buttons and logic here */}
+            <p>This is the content area for {selectedTemplate.name}.</p>
+          </div>
+        ) : (
+          <div>
+            <h2>Select a template to view or edit</h2>
+          </div>
+        )}
       </div>
     </div>
   );
 }
+
 export default MainBody;
