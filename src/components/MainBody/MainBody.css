@@ -1,0 +1,34 @@
+
+/*<---------------css for the card flow container--------------->*/
+.card-flow-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.arrow {
+  font-size: 2rem;
+  color: #1976d2;
+  font-weight: bold;
+}
+
+/*<---------------css for the card--------------->*/
+.card {
+  padding: 1.2rem 2.5rem;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.15);
+  transition: background 0.2s, color 0.2s;
+}
+.card:hover {
+  background: #1565c0;
+  color: #e3f2fd;
+}
+

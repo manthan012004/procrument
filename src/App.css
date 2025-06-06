@@ -1,0 +1,29 @@
+
+/*<---------------css for the whole screen--------------->*/
+.whole-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/*<---------------css for the header--------------->*/
+
+/*<---------------css for the sidebar and main body--------------->*/
+
+.sidebar-and-mainbody {
+  display: flex;
+  flex: 1;
+}
+
+/*<---------------css for the main body--------------->*/
+.main-body {
+  flex: 1;
+  padding: 2rem;
+  background: #fafafa;
+}
+
+
